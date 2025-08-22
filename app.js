@@ -21,7 +21,7 @@ const dict = {
     p2_title: 'แอปสุ่มเมนูอาหาร (Mobile)',
     p2_desc: 'แอปช่วยสุ่มเมนูพร้อมประวัติและฟิลเตอร์ประเภทอาหาร',
     interests_title: 'ความสนใจ',
-    interests_body: 'UX/UI Design, Web/Mobile App, เทคโนโลยีใหม่ ๆ, ดอกไม้และศิลปะโทนฟ้า-เหลือง',
+    interests_body: 'UX/UI Design, Web/Mobile App, เทคโนโลยีใหม่ๆ',
   },
   en: {
     name: 'Phatthana Pomthong',
@@ -45,7 +45,7 @@ const dict = {
     p2_title: 'Random Food Menu App (Mobile)',
     p2_desc: 'Suggests random dishes with history and category filters.',
     interests_title: 'Interests',
-    interests_body: 'UX/UI Design, Web/Mobile Apps, Emerging Tech, flowers & blue‑yellow aesthetics',
+    interests_body: 'UX/UI Design, Web/Mobile Apps, Emerging Tech',
   }
 };
 
