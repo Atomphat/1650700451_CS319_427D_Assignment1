@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="th" data-lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phatthana - Resume</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Itim&family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="title">
+        <div class="avatar">
+          <img id="avatar" alt="profile" src="https://i.ibb.co/LhHPjp1H/preview.jpg" onerror="this.src='https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=300&auto=format&fit=crop'" />
+        </div>
+        <div class="name">
+          <h1 data-i18n-key="name">พัฒนะ ป้อมทอง</h1>
+          <div class="role" data-i18n-key="role">นักศึกษาฝึกงานสายซอฟต์แวร์ / UX/UI</div>
+          <div class="tag" data-i18n-key="badge">กำลังมองหาโอกาสฝึกงาน</div>
+        </div>
+      </div>
+      <div class="ctrls">
+        <button class="btn" id="langBtn">🌐 TH / EN</button>
+        <button class="btn" onclick="window.print()">🖨️ PDF</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <!-- LEFT COLUMN -->
+      <div class="stack">
+        <section class="card">
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="about_title">เกี่ยวกับฉัน</span></h2>
+          <p class="muted" data-i18n-key="about_body">นักศึกษาวิทยาการคอมพิวเตอร์ สนใจพัฒนาแอปและการออกแบบประสบการณ์ผู้ใช้ (UX/UI) ถนัด Python และใช้ Figma ได้อย่างชำนาญ เป็นคนรับผิดชอบ เรียนรู้เร็ว และชอบสร้างงานที่ใส่ใจผู้ใช้</p>
+        </section>
+
+        <section class="card">
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="profile_title">ข้อมูลส่วนตัว</span></h2>
+          <ul class="contact">
+            <li>📍 <span data-i18n-key="location">Ayutthaya, Thailand</span></li>
+            <li>📧 <a href="mailto:phatthana.pomt@bumail.net">phatthana.pomt@bumail.net</a></li>
+            <li>📞 <a href="tel:+66655858999">+66 65-585-8999</a></li>
+            <li>💻 <a href="https://github.com/Atomphat" target="_blank" rel="noreferrer">github.com/Atomphat</a></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="skills_title">ทักษะ</span></h2>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Figma (Pro)</span>
+            <span class="tag" data-i18n-key="skill_mobile">Mobile App (พื้นฐาน)</span>
+            <span class="tag">Git</span>
+            <span class="tag">UX / UI</span>
+            <span class="tag" data-i18n-key="soft_team">Teamwork</span>
+            <span class="tag" data-i18n-key="soft_fast">Fast Learner</span>
+            <span class="tag" data-i18n-key="soft_res">Responsibility</span>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="stack">
+        <section class="card">
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="edu_title">ประวัติการศึกษา</span></h2>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-year">2022 – Present</div>
+              <div data-i18n-key="edu_bu_line1"><strong>มหาวิทยาลัยกรุงเทพ</strong> คณะเทคโนโลยีสารสนเทศและนวัตกรรม</div>
+              <div data-i18n-key="edu_bu_line2">สาขาวิทยาการคอมพิวเตอร์ (GPA 3.15)</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="proj_title">ผลงาน / โปรเจกต์</span></h2>
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-year" data-i18n-key="p1_title">ออกแบบแอปซื้อของ (Figma)</div>
+              <div class="muted" data-i18n-key="p1_desc">ออกแบบ UX/UI ครบ: Wireframe → Prototype → UI พร้อมค้นหา ตะกร้า และเช็คเอาต์</div>
+            </div>
+            <div class="t-item">
+              <div class="t-year" data-i18n-key="p2_title">แอปสุ่มเมนูอาหาร (Mobile)</div>
+              <div class="muted" data-i18n-key="p2_desc">แอปช่วยสุ่มเมนูพร้อมประวัติและฟิลเตอร์ประเภทอาหาร</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="interests_title">ความสนใจ</span></h2>
+          <p class="muted" data-i18n-key="interests_body">UX/UI Design, Web/Mobile App, เทคโนโลยีใหม่ ๆ, ดอกไม้และศิลปะโทนฟ้า-เหลือง</p>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
