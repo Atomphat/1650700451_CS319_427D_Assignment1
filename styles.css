@@ -46,14 +46,9 @@ a{ color:inherit }
 .muted{ color:var(--muted) }
 
 .stack{ display:flex; flex-direction:column; gap:18px }
-.contact li {
-  display: flex;
-  gap: 6px;
-}
+.contact{ padding:0; margin:0; list-style:none }
+.contact li{ display:flex; align-items:center; gap:10px; margin:8px 0; color:#1f2937 }
 
-.contact li::first-word {
-  font-weight: 700;
-}
 
 /* Timeline */
 .timeline{ position:relative; padding-left:22px; }
