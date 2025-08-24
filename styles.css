@@ -32,9 +32,8 @@ a{ color:inherit }
 .name h1{ font-size:clamp(26px, 4vw, 42px); margin:0; color:var(--ink) }
 .name .role{ margin:.25rem 0 0; color:var(--accent); font-weight:700 }
 .name .tag{ display:inline-flex; align-items:center; gap:8px; margin-top:8px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#334155; border:1px solid #c7d2fe; font-size:12px }
-.ctrls{ display:flex; gap:10px }
-.btn{ border:1px solid var(--line); background:#fff; color:#1f2937; padding:10px 14px; border-radius:12px; font-weight:600; cursor:pointer; box-shadow: var(--shadow) }
-.btn:hover{ background:#f8fafc }
+
+
 
 /* Grid layout */
 .grid{ display:grid; grid-template-columns: 320px 1fr; gap:18px; align-items:start }
@@ -61,10 +60,3 @@ a{ color:inherit }
 .tags{ display:flex; flex-wrap:wrap; gap:8px }
 .tag{ padding:6px 10px; border-radius:999px; background:#e0f2fe; border:1px solid #bae6fd; font-weight:600; font-size:12px; color:#0c4a6e }
 
-/* Print */
-@media print{
-  body{ background:#fff; color:#000 }
-  .btn{ display:none }
-  .wrap{ padding:0 }
-  .card{ box-shadow:none }
-}
