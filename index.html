@@ -17,11 +17,14 @@
         </div>
         <div class="name">
           <h1 data-i18n-key="name">พัฒนะ ป้อมทอง</h1>
-          <div class="role" data-i18n-key="role">นักศึกษาฝึกงานสายซอฟต์แวร์ / UX/UI</div>
+          <div class="role" data-i18n-key="role">นักศึกษาฝึกงานสาย Full-Stack Web Development / UX/UI</div>
           <div class="tag" data-i18n-key="badge">กำลังมองหาโอกาสฝึกงาน</div>
         </div>
       </div>
-      
+      <div class="ctrls">
+        <button class="btn" id="langBtn">🌐 TH / EN</button>
+        <button class="btn" onclick="window.print()">🖨️ PDF</button>
+      </div>
     </header>
 
     <section class="grid">
@@ -35,26 +38,26 @@
         <section class="card">
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="profile_title">ข้อมูลส่วนตัว</span></h2>
           <ul class="contact">
-            <li>ที่อยู่ : <span data-i18n-key="location">อยุธยา, ประเทศไทย</span></li>
-            <li>อีเมล : <a href="mailto:phatthana.pomt@bumail.net">phatthana.pomt@bumail.net</a></li>
-            <li>เบอร์โทร : <a href="tel:+66655858999">+66 65-585-8999</a></li>
-            <li>GitHub : <a href="https://github.com/Atomphat" target="_blank" rel="noreferrer">github.com/Atomphat</a></li>
+            <li>🎂<span data-i18n-key="birthday">11 September 2003</span></li>
+            <li>🧑‍💻 <span data-i18n-key="age">22 years old</span></li>
+            <li>📍 <span data-i18n-key="location">Ayutthaya, Thailand</span></li>
+            <li>📧 <a href="mailto:phatthana.pomt@bumail.net">phatthana.pomt@bumail.net</a></li>
+            <li>📞 <a href="tel:+66655858999">+66 65-585-8999</a></li>
+            <li>🔗 <a href="https://www.linkedin.com/in/phatthana-pomthong-599b05247/" target="_blank" rel="noreferrer">linkedin/phatthana</a></li>
+            <li>💻 <a href="https://github.com/Atomphat" target="_blank" rel="noreferrer">github.com/Atomphat</a></li>
           </ul>
         </section>
 
         <section class="card">
-          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="skills_title">ทักษะ</span></h2>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Figma (Pro)</span>
-            <span class="tag" data-i18n-key="skill_mobile">Mobile App (พื้นฐาน)</span>
-            <span class="tag">Git</span>
-            <span class="tag">UX / UI</span>
-            <span class="tag" data-i18n-key="soft_team">Teamwork</span>
-            <span class="tag" data-i18n-key="soft_fast">Fast Learner</span>
-            <span class="tag" data-i18n-key="soft_res">Responsibility</span>
-          </div>
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="softskills_title">ทักษะการทำงาน</span></h2>
+            <ul class="skills-list">
+              <li><span data-i18n-key="soft_team">การทำงานเป็นทีม</span> — <span data-i18n-key="level_good">ดี</span></li>
+              <li><span data-i18n-key="soft_fast">การเรียนรู้เร็ว</span> — <span data-i18n-key="level_good">ดี</span></li>
+              <li><span data-i18n-key="soft_res">ความรับผิดชอบ</span> — <span data-i18n-key="level_good">ดี</span></li>
+            </ul>
+
         </section>
+
       </div>
 
       <!-- RIGHT COLUMN -->
@@ -63,11 +66,21 @@
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="edu_title">ประวัติการศึกษา</span></h2>
           <div class="timeline">
             <div class="t-item">
-              <div class="t-year">2022 – ปัจจุบัน</div>
+              <div class="t-year">2022 – Present</div>
               <div data-i18n-key="edu_bu_line1"><strong>มหาวิทยาลัยกรุงเทพ</strong> คณะเทคโนโลยีสารสนเทศและนวัตกรรม</div>
               <div data-i18n-key="edu_bu_line2">สาขาวิทยาการคอมพิวเตอร์ (GPA 3.15)</div>
             </div>
           </div>
+        </section>
+        <section class="card">
+          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="hardskills_title">ทักษะทางเทคนิค</span></h2>
+            <ul class="skills-list">
+              <li><span data-i18n-key="skill_python">Python</span> — <span data-i18n-key="level_good">ดี</span></li>
+              <li><span data-i18n-key="skill_java">Java</span> — <span data-i18n-key="level_medium">ปานกลาง</span></li>
+              <li><span data-i18n-key="skill_web">Web App</span> — <span data-i18n-key="level_good">ดี</span></li>
+              <li><span data-i18n-key="skill_mobile">Mobile</span> — <span data-i18n-key="level_good">ดี</span></li>
+              <li><span data-i18n-key="skill_figma">Figma</span> — <span data-i18n-key="level_pro">ชำนาญ</span></li>
+            </ul>
         </section>
 
         <section class="card">
@@ -75,21 +88,23 @@
           <div class="timeline">
             <div class="t-item">
               <div class="t-year" data-i18n-key="p1_title">ออกแบบแอปซื้อของ (Figma)</div>
+              <div class="t-year" data-i18n-key="p1_time">ระยะเวลา 2 สัปดาห์</div>
               <div class="muted" data-i18n-key="p1_desc">ออกแบบ UX/UI ครบ: Wireframe → Prototype → UI พร้อมค้นหา ตะกร้า และเช็คเอาต์</div>
             </div>
             <div class="t-item">
               <div class="t-year" data-i18n-key="p2_title">แอปสุ่มเมนูอาหาร (Mobile)</div>
+              <div class="t-year" data-i18n-key="p2_time">ระยะเวลา 4 สัปดาห์</div>
               <div class="muted" data-i18n-key="p2_desc">แอปช่วยสุ่มเมนูพร้อมประวัติและฟิลเตอร์ประเภทอาหาร</div>
+            </div>
+            <div class="t-item">
+              <div class="t-year" data-i18n-key="p3_title">พัฒนาแชทบอตแบบเสียง (Python)</div>
+              <div class="t-year" data-i18n-key="p3_time">ระยะเวลา 2 เดือน</div>
+              <div class="muted" data-i18n-key="p3_desc">พัฒนาแชทบอตแบบเสียงสำหรับตอบคำถามสิทธิของผู้ประกันตน สำนักงานประกันสังคม</div>
             </div>
           </div>
         </section>
 
-        <section class="card">
-          <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="interests_title">ความสนใจ</span></h2>
-          <p class="muted" data-i18n-key="interests_body">UX/UI Design, Web/Mobile App, เทคโนโลยีใหม่ๆ</p>
-        </section>
-      </div>
-    </section>
+        
   </div>
 
   <script src="./app.js"></script>
