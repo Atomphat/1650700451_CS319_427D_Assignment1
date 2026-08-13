@@ -132,10 +132,15 @@ function typewrite(el, text, speed){
   return new Promise(resolve => {
     if(el._twTimer) clearTimeout(el._twTimer);
     el.classList.add('typing');
-    el.textContent = '';
+    el.innerHTML = '';
+    const textSpan = document.createElement('span');
+    const caret = document.createElement('span');
+    caret.className = 'tw-caret';
+    el.appendChild(textSpan);
+    el.appendChild(caret);
     let i = 0;
     (function step(){
-      el.textContent = text.slice(0, i);
+      textSpan.textContent = text.slice(0, i);
       i++;
       if(i <= text.length){
         el._twTimer = setTimeout(step, speed);

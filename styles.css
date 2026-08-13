@@ -49,8 +49,8 @@ a{ color:inherit }
 .wrap{ max-width:1100px; margin:0 auto; padding:28px 18px 64px; }
 
 /* Header */
-.header{ display:flex; gap:24px; align-items:center; justify-content:space-between; margin-bottom:20px }
-.title{ display:flex; gap:16px; align-items:center; }
+.header{ display:flex; gap:24px; align-items:center; justify-content:space-between; margin-bottom:20px; min-width:0 }
+.title{ display:flex; gap:16px; align-items:center; min-width:0 }
 .avatar{ position:relative; isolation:isolate; width:112px; height:112px; border-radius:50%; flex:0 0 auto; padding:3px; background:#fff; border:1px solid var(--line); box-shadow: var(--shadow); }
 .avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50% }
 .avatar::before{
@@ -72,10 +72,11 @@ a{ color:inherit }
 :root[data-theme="dark"] .avatar::after{ box-shadow:0 0 18px 4px rgba(96,165,250,.4) }
 @keyframes avatar-spin{ to{ transform:rotate(360deg) } }
 @keyframes avatar-pulse{ 0%,100%{ opacity:.45 } 50%{ opacity:1 } }
+.name{ min-width:0 }
 .name h1{ font-size:clamp(26px, 4vw, 42px); margin:0; color:var(--ink) }
 .name .role{ margin:.25rem 0 0; color:var(--accent); font-weight:700 }
 .name .tag{ display:inline-flex; align-items:center; gap:8px; margin-top:8px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#334155; border:1px solid #c7d2fe; font-size:12px }
-.ctrls{ display:flex; gap:10px }
+.ctrls{ display:flex; gap:10px; flex-wrap:wrap }
 .btn{ border:1px solid var(--line); background:#fff; color:#1f2937; padding:10px 14px; border-radius:12px; font-weight:600; cursor:pointer; box-shadow: var(--shadow) }
 .btn:hover{ background:#f8fafc }
 
@@ -131,14 +132,13 @@ a{ color:inherit }
 .skills-list > .skill-item:nth-child(5){ transition-delay:.37s }
 .skills-list > .skill-item:nth-child(6){ transition-delay:.45s }
 
-/* Typewriter (name / role) — width:max-content keeps each on its own line
-   (h1/.role are block-level) while shrinking the box to the text so the
-   caret sits right after the last character instead of the block's edge */
-.tw{ display:block; width:max-content; max-width:100%; min-height:1em }
-.tw.typing{ border-right:.09em solid var(--accent) }
-.tw.typing::after{ content:''; }
-@keyframes tw-caret{ 50%{ border-color:transparent } }
-.tw.typing{ animation: tw-caret .8s step-end infinite }
+/* Typewriter (name / role) — the block stays normal width:auto so it wraps
+   like any other text on narrow screens; the caret is a small inline-block
+   sibling that just rides along after the last typed character. */
+.tw{ min-height:1em; overflow-wrap:break-word }
+.tw-caret{ display:inline-block; width:.1em; height:.9em; margin-left:2px; background:var(--accent); vertical-align:-0.05em; opacity:0 }
+.tw.typing .tw-caret{ opacity:1; animation: tw-caret .8s step-end infinite }
+@keyframes tw-caret{ 50%{ opacity:0 } }
 
 /* Word-by-word reveal inside prose text */
 .stagger-text .sw{
@@ -151,10 +151,11 @@ a{ color:inherit }
 .reveal.in-view .stagger-text .sw{ opacity:1; transform:translateY(0) }
 
 /* Stats strip */
-.stats-strip{ display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:12px; margin:0 0 18px; }
-.stat{ text-align:center; padding:14px 16px; }
-.stat-value{ font-weight:700; font-size:clamp(20px, 3vw, 28px); color:var(--ink); font-variant-numeric:proportional-nums; }
-.stat-label{ margin-top:4px; font-size:12px; color:var(--muted); }
+.stats-strip{ display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin:0 0 18px; }
+.stat{ text-align:center; padding:14px 10px; min-width:0; }
+.stat-value{ font-weight:700; font-size:clamp(18px, 5vw, 28px); color:var(--ink); font-variant-numeric:proportional-nums; }
+.stat-label{ margin-top:4px; font-size:12px; color:var(--muted); overflow-wrap:break-word }
+@media (max-width:640px){ .stats-strip{ grid-template-columns:repeat(2, 1fr) } }
 
 /* Card hover — lift + accent glow (placed after .reveal so it wins once revealed) */
 .card{ transition-property:transform, box-shadow, border-color, background-color, color; transition-duration:.25s; transition-timing-function:ease; }
@@ -171,7 +172,7 @@ a{ color:inherit }
   .reveal{ transition:none; opacity:1; transform:none }
   .skill-fill{ transition:none }
   .timeline > .t-item, .skills-list > .skill-item{ transition-delay:0s }
-  .tw.typing{ animation:none; border-right-color:transparent }
+  .tw-caret{ display:none }
   .stagger-text .sw{ transition:none; transition-delay:0s }
   .avatar::before, .avatar::after{ animation:none }
   .card:hover{ transform:none }
