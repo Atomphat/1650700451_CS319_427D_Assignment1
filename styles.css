@@ -1,20 +1,44 @@
 
 :root{
-  --bg:#f7fafc;        
-  --card:#ffffff;       
-  --ink:#0f172a;       
-  --muted:#64748b;       
-  --line:#e2e8f0;         
-  --accent:#2563eb;     
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --accent:#2563eb;
   --radius:16px;
   --shadow: 0 1px 2px rgba(15,23,42,.06), 0 8px 24px rgba(15,23,42,.06);
 }
+
+/* Dark mode */
+:root[data-theme="dark"]{
+  --bg:#0b1220;
+  --card:#131b2e;
+  --ink:#e5e7eb;
+  --muted:#94a3b8;
+  --line:#25324a;
+  --accent:#60a5fa;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+}
+:root[data-theme="dark"] .name .tag{ background:#1e293b; color:#c7d2fe; border-color:#334155 }
+:root[data-theme="dark"] .sec-title{ color:#f1f5f9 }
+:root[data-theme="dark"] .contact li{ color:#e2e8f0 }
+:root[data-theme="dark"] .t-year{ color:#f1f5f9 }
+:root[data-theme="dark"] .timeline::before{ background:#334155 }
+:root[data-theme="dark"] .t-item::before{ box-shadow:0 0 0 2px #1e3a8a }
+:root[data-theme="dark"] .tags .tag{ background:#132436; border-color:#1e3a5f; color:#93c5fd }
+:root[data-theme="dark"] .btn{ background:#131b2e; color:#e5e7eb; border-color:#25324a }
+:root[data-theme="dark"] .btn:hover{ background:#1b2740 }
+:root[data-theme="dark"] .avatar{ background:#131b2e }
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0; background:var(--bg); color:var(--ink);
   font-family: 'Prompt', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6;
+  transition: background-color .25s ease, color .25s ease;
 }
+body, .card, .btn, .avatar, .name .tag, .tags .tag{ transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease; }
 
 html[data-lang="en"] body{ font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 h1,h2,h3{ font-family:'Itim', cursive; letter-spacing:.2px }
@@ -27,8 +51,27 @@ a{ color:inherit }
 /* Header */
 .header{ display:flex; gap:24px; align-items:center; justify-content:space-between; margin-bottom:20px }
 .title{ display:flex; gap:16px; align-items:center; }
-.avatar{ width:112px; height:112px; border-radius:50%; flex:0 0 auto; padding:3px; background:#fff; border:1px solid var(--line); box-shadow: var(--shadow); }
+.avatar{ position:relative; isolation:isolate; width:112px; height:112px; border-radius:50%; flex:0 0 auto; padding:3px; background:#fff; border:1px solid var(--line); box-shadow: var(--shadow); }
 .avatar img{ width:100%; height:100%; object-fit:cover; border-radius:50% }
+.avatar::before{
+  content:'';
+  position:absolute; inset:-5px;
+  border-radius:50%;
+  z-index:-1;
+  background:conic-gradient(from 0deg, var(--accent), #7c3aed, #ec4899, var(--accent));
+  animation: avatar-spin 6s linear infinite;
+}
+.avatar::after{
+  content:'';
+  position:absolute; inset:-5px;
+  border-radius:50%;
+  z-index:-1;
+  box-shadow:0 0 16px 3px rgba(37,99,235,.45);
+  animation: avatar-pulse 2.4s ease-in-out infinite;
+}
+:root[data-theme="dark"] .avatar::after{ box-shadow:0 0 18px 4px rgba(96,165,250,.4) }
+@keyframes avatar-spin{ to{ transform:rotate(360deg) } }
+@keyframes avatar-pulse{ 0%,100%{ opacity:.45 } 50%{ opacity:1 } }
 .name h1{ font-size:clamp(26px, 4vw, 42px); margin:0; color:var(--ink) }
 .name .role{ margin:.25rem 0 0; color:var(--accent); font-weight:700 }
 .name .tag{ display:inline-flex; align-items:center; gap:8px; margin-top:8px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#334155; border:1px solid #c7d2fe; font-size:12px }
@@ -58,8 +101,81 @@ a{ color:inherit }
 .t-year{ font-weight:700; color:#111827 }
 
 /* Tags */
-.tags{ display:flex; flex-wrap:wrap; gap:8px }
+.tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px }
 .tag{ padding:6px 10px; border-radius:999px; background:#e0f2fe; border:1px solid #bae6fd; font-weight:600; font-size:12px; color:#0c4a6e }
+
+/* Skill bars */
+.skills-list{ list-style:none; padding:0; margin:0 }
+.skill-item{ margin:12px 0 }
+.skill-item:first-child{ margin-top:0 }
+.skill-item:last-child{ margin-bottom:0 }
+.skill-head{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:6px; font-size:14px }
+.skill-level{ color:var(--accent); font-weight:700; font-size:12px }
+.skill-track{ height:8px; border-radius:999px; background:var(--line); overflow:hidden }
+.skill-fill{ height:100%; width:0%; border-radius:999px; background:linear-gradient(90deg, var(--accent), #7c3aed); transition:width 1.1s cubic-bezier(.16,1,.3,1) }
+
+/* Scroll reveal */
+.reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease }
+.reveal.in-view{ opacity:1; transform:translateY(0) }
+
+/* Cascade timeline / skill items so they don't all pop in at once */
+.timeline > .t-item:nth-child(1){ transition-delay:.05s }
+.timeline > .t-item:nth-child(2){ transition-delay:.15s }
+.timeline > .t-item:nth-child(3){ transition-delay:.25s }
+.timeline > .t-item:nth-child(4){ transition-delay:.35s }
+.timeline > .t-item:nth-child(5){ transition-delay:.45s }
+.skills-list > .skill-item:nth-child(1){ transition-delay:.05s }
+.skills-list > .skill-item:nth-child(2){ transition-delay:.13s }
+.skills-list > .skill-item:nth-child(3){ transition-delay:.21s }
+.skills-list > .skill-item:nth-child(4){ transition-delay:.29s }
+.skills-list > .skill-item:nth-child(5){ transition-delay:.37s }
+.skills-list > .skill-item:nth-child(6){ transition-delay:.45s }
+
+/* Typewriter (name / role) — width:max-content keeps each on its own line
+   (h1/.role are block-level) while shrinking the box to the text so the
+   caret sits right after the last character instead of the block's edge */
+.tw{ display:block; width:max-content; max-width:100%; min-height:1em }
+.tw.typing{ border-right:.09em solid var(--accent) }
+.tw.typing::after{ content:''; }
+@keyframes tw-caret{ 50%{ border-color:transparent } }
+.tw.typing{ animation: tw-caret .8s step-end infinite }
+
+/* Word-by-word reveal inside prose text */
+.stagger-text .sw{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .45s ease, transform .45s ease;
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+.reveal.in-view .stagger-text .sw{ opacity:1; transform:translateY(0) }
+
+/* Stats strip */
+.stats-strip{ display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:12px; margin:0 0 18px; }
+.stat{ text-align:center; padding:14px 16px; }
+.stat-value{ font-weight:700; font-size:clamp(20px, 3vw, 28px); color:var(--ink); font-variant-numeric:proportional-nums; }
+.stat-label{ margin-top:4px; font-size:12px; color:var(--muted); }
+
+/* Card hover — lift + accent glow (placed after .reveal so it wins once revealed) */
+.card{ transition-property:transform, box-shadow, border-color, background-color, color; transition-duration:.25s; transition-timing-function:ease; }
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  box-shadow:0 4px 14px rgba(37,99,235,.16), 0 18px 40px rgba(37,99,235,.12), var(--shadow);
+}
+:root[data-theme="dark"] .card:hover{
+  box-shadow:0 4px 16px rgba(96,165,250,.28), 0 20px 44px rgba(96,165,250,.16), var(--shadow);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ transition:none; opacity:1; transform:none }
+  .skill-fill{ transition:none }
+  .timeline > .t-item, .skills-list > .skill-item{ transition-delay:0s }
+  .tw.typing{ animation:none; border-right-color:transparent }
+  .stagger-text .sw{ transition:none; transition-delay:0s }
+  .avatar::before, .avatar::after{ animation:none }
+  .card:hover{ transform:none }
+}
 
 /* Print */
 @media print {
@@ -85,5 +201,14 @@ a{ color:inherit }
 
   .card {
     box-shadow: none;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #themeBtn {
+    display: none;
   }
 }

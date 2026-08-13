@@ -16,44 +16,73 @@
           <img id="avatar" alt="profile" src="https://i.ibb.co/LhHPjp1H/preview.jpg" onerror="this.src='https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=300&auto=format&fit=crop'" />
         </div>
         <div class="name">
-          <h1 data-i18n-key="name">พัฒนะ ป้อมทอง</h1>
-          <div class="role" data-i18n-key="role">นักศึกษาฝึกงานสาย Full-Stack Web Development / UX/UI</div>
-          <div class="tag" data-i18n-key="badge">กำลังมองหาโอกาสฝึกงาน</div>
+          <h1 class="tw" data-i18n-key="name">พัฒนะ ป้อมทอง</h1>
+          <div class="role tw" data-i18n-key="role">นักพัฒนาเว็บสาย Full-Stack Web Development / UX/UI</div>
+          <div class="tag" data-i18n-key="badge">กำลังมองหางาน</div>
         </div>
       </div>
       <div class="ctrls">
+        <button class="btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
         <button class="btn" id="langBtn">🌐 TH / EN</button>
         <button class="btn" onclick="window.print()">🖨️ PDF</button>
       </div>
     </header>
 
+    <section class="stats-strip reveal">
+      <div class="stat card">
+        <div class="stat-value" data-count="3.03" data-decimals="2">0</div>
+        <div class="stat-label" data-i18n-key="stat_gpa">GPA</div>
+      </div>
+      <div class="stat card">
+        <div class="stat-value" data-count="4" data-decimals="0">0</div>
+        <div class="stat-label" data-i18n-key="stat_projects">Projects</div>
+      </div>
+      <div class="stat card">
+        <div class="stat-value" data-count="6" data-decimals="0">0</div>
+        <div class="stat-label" data-i18n-key="stat_skills">Tech skills</div>
+      </div>
+      <div class="stat card">
+        <div class="stat-value" data-count="2026" data-decimals="0">0</div>
+        <div class="stat-label" data-i18n-key="stat_grad">Grad year</div>
+      </div>
+    </section>
+
     <section class="grid">
       <!-- LEFT COLUMN -->
       <div class="stack">
-        <section class="card">
+        <section class="card reveal">
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="about_title">เกี่ยวกับฉัน</span></h2>
-          <p class="muted" data-i18n-key="about_body">นักศึกษาวิทยาการคอมพิวเตอร์ สนใจพัฒนาแอปและการออกแบบประสบการณ์ผู้ใช้ (UX/UI) ถนัด Python และใช้ Figma ได้อย่างชำนาญ เป็นคนรับผิดชอบ เรียนรู้เร็ว และชอบสร้างงานที่ใส่ใจผู้ใช้</p>
+          <p class="muted stagger-text" data-i18n-key="about_body">นักพัฒนา Full-Stack Web Development ที่มีพื้นฐานแน่นทั้งฝั่ง Frontend และ Backend ถนัด Python และมีทักษะออกแบบ UX/UI ด้วย Figma อย่างชำนาญ พร้อมประสบการณ์พัฒนาแอปพลิเคชันด้วย React Native เป็นคนใส่ใจรายละเอียดและประสบการณ์ผู้ใช้ เรียนรู้เทคโนโลยีใหม่ได้เร็ว ทำงานเป็นทีมได้ดี และพร้อมรับผิดชอบงานอย่างเต็มที่ กำลังมองหาโอกาสร่วมงานในตำแหน่งด้าน Full-Stack Development หรือ UX/UI Design</p>
         </section>
 
-        <section class="card">
+        <section class="card reveal">
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="profile_title">ข้อมูลส่วนตัว</span></h2>
           <ul class="contact">
             <li>🎂<span data-i18n-key="birthday">11 September 2003</span></li>
             <li>🧑‍💻 <span data-i18n-key="age">22 years old</span></li>
             <li>📍 <span data-i18n-key="location">Ayutthaya, Thailand</span></li>
-            <li>📧 <a href="mailto:phatthana.pomt@bumail.net">phatthana.pomt@bumail.net</a></li>
+            <li>📧 <a href="mailto:phatthanapomthong@gmail.com">phatthanapomthong@gmail.com</a></li>
             <li>📞 <a href="tel:+66655858999">+66 65-585-8999</a></li>
             <li>🔗 <a href="https://www.linkedin.com/in/phatthana-pomthong-599b05247/" target="_blank" rel="noreferrer">linkedin/phatthana</a></li>
             <li>💻 <a href="https://github.com/Atomphat" target="_blank" rel="noreferrer">github.com/Atomphat</a></li>
           </ul>
         </section>
 
-        <section class="card">
+        <section class="card reveal">
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="softskills_title">ทักษะการทำงาน</span></h2>
             <ul class="skills-list">
-              <li><span data-i18n-key="soft_team">การทำงานเป็นทีม</span> — <span data-i18n-key="level_good">ดี</span></li>
-              <li><span data-i18n-key="soft_fast">การเรียนรู้เร็ว</span> — <span data-i18n-key="level_good">ดี</span></li>
-              <li><span data-i18n-key="soft_res">ความรับผิดชอบ</span> — <span data-i18n-key="level_good">ดี</span></li>
+              <li class="skill-item reveal" data-level="90">
+                <div class="skill-head"><span data-i18n-key="soft_team">การทำงานเป็นทีม</span><span class="skill-level" data-i18n-key="level_good">ดี</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
+              <li class="skill-item reveal" data-level="85">
+                <div class="skill-head"><span data-i18n-key="soft_fast">การเรียนรู้เร็ว</span><span class="skill-level" data-i18n-key="level_good">ดี</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
+              <li class="skill-item reveal" data-level="90">
+                <div class="skill-head"><span data-i18n-key="soft_res">ความรับผิดชอบ</span><span class="skill-level" data-i18n-key="level_good">ดี</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
             </ul>
 
         </section>
@@ -62,44 +91,72 @@
 
       <!-- RIGHT COLUMN -->
       <div class="stack">
-        <section class="card">
+        <section class="card reveal">
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="edu_title">ประวัติการศึกษา</span></h2>
           <div class="timeline">
-            <div class="t-item">
-              <div class="t-year">2022 – Present</div>
+            <div class="t-item reveal">
+              <div class="t-year">2022 – 2026</div>
               <div data-i18n-key="edu_bu_line1"><strong>มหาวิทยาลัยกรุงเทพ</strong> คณะเทคโนโลยีสารสนเทศและนวัตกรรม</div>
-              <div data-i18n-key="edu_bu_line2">สาขาวิทยาการคอมพิวเตอร์ (GPA 3.15)</div>
+              <div data-i18n-key="edu_bu_line2">สาขาวิทยาการคอมพิวเตอร์ (GPA 3.03)</div>
             </div>
           </div>
         </section>
-        <section class="card">
+        <section class="card reveal">
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="hardskills_title">ทักษะทางเทคนิค</span></h2>
             <ul class="skills-list">
-              <li><span data-i18n-key="skill_python">Python</span> — <span data-i18n-key="level_good">ดี</span></li>
-              <li><span data-i18n-key="skill_java">Java</span> — <span data-i18n-key="level_medium">ปานกลาง</span></li>
-              <li><span data-i18n-key="skill_web">Web App</span> — <span data-i18n-key="level_good">ดี</span></li>
-              <li><span data-i18n-key="skill_mobile">Mobile</span> — <span data-i18n-key="level_good">ดี</span></li>
-              <li><span data-i18n-key="skill_figma">Figma</span> — <span data-i18n-key="level_pro">ชำนาญ</span></li>
+              <li class="skill-item reveal" data-level="85">
+                <div class="skill-head"><span data-i18n-key="skill_python">Python</span><span class="skill-level" data-i18n-key="level_good">ดี</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
+              <li class="skill-item reveal" data-level="55">
+                <div class="skill-head"><span data-i18n-key="skill_java">Java</span><span class="skill-level" data-i18n-key="level_medium">ปานกลาง</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
+              <li class="skill-item reveal" data-level="80">
+                <div class="skill-head"><span data-i18n-key="skill_web">Web App</span><span class="skill-level" data-i18n-key="level_good">ดี</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
+              <li class="skill-item reveal" data-level="75">
+                <div class="skill-head"><span data-i18n-key="skill_mobile">Mobile</span><span class="skill-level" data-i18n-key="level_good">ดี</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
+              <li class="skill-item reveal" data-level="95">
+                <div class="skill-head"><span data-i18n-key="skill_figma">Figma</span><span class="skill-level" data-i18n-key="level_pro">ชำนาญ</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
+              <li class="skill-item reveal" data-level="75">
+                <div class="skill-head"><span data-i18n-key="skill_reactnative">React Native CLI</span><span class="skill-level" data-i18n-key="level_good">ดี</span></div>
+                <div class="skill-track"><div class="skill-fill"></div></div>
+              </li>
             </ul>
         </section>
 
-        <section class="card">
+        <section class="card reveal">
           <h2 class="sec-title"><span class="bar"></span><span data-i18n-key="proj_title">ผลงาน / โปรเจกต์</span></h2>
           <div class="timeline">
-            <div class="t-item">
+            <div class="t-item reveal">
               <div class="t-year" data-i18n-key="p1_title">ออกแบบแอปซื้อของ (Figma)</div>
               <div class="t-year" data-i18n-key="p1_time">ระยะเวลา 2 สัปดาห์</div>
-              <div class="muted" data-i18n-key="p1_desc">ออกแบบ UX/UI ครบ: Wireframe → Prototype → UI พร้อมค้นหา ตะกร้า และเช็คเอาต์</div>
+              <div class="muted stagger-text" data-i18n-key="p1_desc">ออกแบบ UX/UI ครบ: Wireframe → Prototype → UI พร้อมค้นหา ตะกร้า และเช็คเอาต์</div>
+              <div class="tags"><span class="tag">Figma</span><span class="tag">UX/UI</span></div>
             </div>
-            <div class="t-item">
+            <div class="t-item reveal">
               <div class="t-year" data-i18n-key="p2_title">แอปสุ่มเมนูอาหาร (Mobile)</div>
               <div class="t-year" data-i18n-key="p2_time">ระยะเวลา 4 สัปดาห์</div>
-              <div class="muted" data-i18n-key="p2_desc">แอปช่วยสุ่มเมนูพร้อมประวัติและฟิลเตอร์ประเภทอาหาร</div>
+              <div class="muted stagger-text" data-i18n-key="p2_desc">แอปช่วยสุ่มเมนูพร้อมประวัติและฟิลเตอร์ประเภทอาหาร</div>
+              <div class="tags"><span class="tag">Mobile</span></div>
             </div>
-            <div class="t-item">
+            <div class="t-item reveal">
               <div class="t-year" data-i18n-key="p3_title">พัฒนาแชทบอตแบบเสียง (Python)</div>
               <div class="t-year" data-i18n-key="p3_time">ระยะเวลา 2 เดือน</div>
-              <div class="muted" data-i18n-key="p3_desc">พัฒนาแชทบอตแบบเสียงสำหรับตอบคำถามสิทธิของผู้ประกันตน สำนักงานประกันสังคม</div>
+              <div class="muted stagger-text" data-i18n-key="p3_desc">พัฒนาแชทบอตแบบเสียงสำหรับตอบคำถามสิทธิของผู้ประกันตน สำนักงานประกันสังคม</div>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Voice Bot</span></div>
+            </div>
+            <div class="t-item reveal">
+              <div class="t-year" data-i18n-key="p4_title">แอป Demo ดูหนัง (DetPlix)</div>
+              <div class="t-year" data-i18n-key="p4_time">โปรเจกต์ส่วนตัว</div>
+              <div class="muted stagger-text" data-i18n-key="p4_desc">พัฒนาแอปตัวอย่าง (Demo) สำหรับดูหนัง ชื่อ DetPlix</div>
+              <div class="tags"><span class="tag">React Native</span></div>
             </div>
           </div>
         </section>
